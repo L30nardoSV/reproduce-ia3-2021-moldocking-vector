@@ -3,9 +3,9 @@
 This repository contains the scripts and configuration files used in the 
 Artifact Appendix of the aforementioned article submitted to IA^3 2021 **(currently under revision)**.
 
-These scripts automate the evaluation of two molecular docking programs:
-* AutoDock-Aurora on SX-Aurora TSUBASA (developed in this work)
-* AutoDock-GPU on GPUs/CPUs (state-of the art)
+These scripts automate the evaluation of two molecular docking programs on different platforms:
+* SX-Aurora TSUBASA Vector Engine: AutoDock-Aurora (developed in this work)
+* GPUs & CPUs: AutoDock-GPU (state-of the art)
 
 ## Instructions
 
