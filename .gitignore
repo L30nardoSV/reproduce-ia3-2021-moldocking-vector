@@ -1,0 +1,4 @@
+env/
+myresults*.txt
+myresults*.xlsx
+results_*/

@@ -1,0 +1,62 @@
+diff --git a/host/src/performdocking.cpp b/host/src/performdocking.cpp
+index ab7d009..189eed0 100644
+--- a/host/src/performdocking.cpp
++++ b/host/src/performdocking.cpp
+@@ -96,6 +96,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #include "stringify.h"
+ #include "correct_grad_axisangle.h"
+ 
++#include <sys/time.h>
++
+ int docking_with_gpu(const Gridinfo*           mygrid,
+                 /*const*/ float*               cpu_floatgrids,
+                            Dockpars*                   mypars,
+@@ -245,6 +247,9 @@ filled with clock() */
+        clock_t clock_stop_docking;
+        clock_t clock_stop_program_before_clustering;
+ 
++double leo_num_sec, leo_num_usec, leo_elapsed_sec;
++timeval leo_time_start, leo_time_end;
++
+        //setting number of blocks and threads
+        threadsPerBlock = NUM_OF_THREADS_PER_BLOCK;
+        blocksPerGridForEachEntity = mypars->pop_size * mypars->num_of_runs;
+@@ -554,6 +559,7 @@ filled with clock() */
+        */
+ 
+        clock_start_docking = clock();
++gettimeofday(&leo_time_start, NULL);
+ 
+        //print progress bar
+ #ifndef DOCK_DEBUG
+@@ -1107,6 +1113,11 @@ filled with clock() */
+                memcopyBufferObjectFromDevice(command_queue,cpu_energies,mem_dockpars_energies_next,size_energies);
+        }
+ 
++gettimeofday(&leo_time_end, NULL);
++leo_num_sec = leo_time_end.tv_sec - leo_time_start.tv_sec;
++leo_num_usec = leo_time_end.tv_usec - leo_time_start.tv_usec;
++leo_elapsed_sec = leo_num_sec + (leo_num_usec/1000000);
++printf("Docking run time: %.3f sec\n", leo_elapsed_sec);
+ 
+ #if defined (DOCK_DEBUG)
+        for (int cnt_pop=0;cnt_pop<size_populations/sizeof(float);cnt_pop++)
+@@ -1151,6 +1162,16 @@ filled with clock() */
+ 
+        clock_stop_docking = clock();
+ 
++char leo_report_file_name[256];
++FILE* fp;
++
++strcpy(leo_report_file_name, mypars->resname);
++strcat(leo_report_file_name, ".dlg");
++fp = fopen(leo_report_file_name, "a");
++fprintf(fp, "\n\n\nDocking run time %.3f sec\n", leo_elapsed_sec);
++fclose(fp);
++
++
+ /*
+        clReleaseMemObject(mem_atom_charges_const);
+         clReleaseMemObject(mem_atom_types_const);
+
+
