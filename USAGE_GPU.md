@@ -6,7 +6,7 @@
 git clone --depth 1 --branch v1.1 https://github.com/ccsb-scripps/AutoDock-GPU.git
 cd AutoDock-GPU
 
-git clone https://gitlab.com/postdoc_tud/molecular-docking/autodock-aurora/autodock-aurora-2-benchmarks-ia3-2021.git
+git clone https://github.com/L30nardoSV/reproduce-ia3-2021-moldocking-vector.git
 ```
 
 ## 2. Apply git patch to AutoDock-GPU v1.1
@@ -16,7 +16,7 @@ Regarding execution times, AutoDock-GPU v1.1 only prints full program run-time.
 In order to additionally print _docking run-times_, apply the following git patch:
 
 ```
-cp autodock-aurora-2-benchmarks-ia3-2021/adgpu_v1.1_runtimes.patch .
+cp reproduce-ia3-2021-moldocking-vector/adgpu_v1.1_runtimes.patch .
 git apply --verbose --ignore-whitespace adgpu_v1.1_runtimes.patch
 ```
 
@@ -54,20 +54,20 @@ For GPU:
 
 ```bash
 make DEVICE=GPU
-cp bin/autodock_gpu_64wi autodock-aurora-2-benchmarks-ia3-2021/
+cp bin/autodock_gpu_64wi reproduce-ia3-2021-moldocking-vector/
 ```
 
 For CPU:
 
 ```bash
 make DEVICE=CPU
-cp bin/autodock_cpu_16wi autodock-aurora-2-benchmarks-ia3-2021/
+cp bin/autodock_cpu_16wi reproduce-ia3-2021-moldocking-vector/
 ```
 
 ## 5. Run benchmarks
 
 ```bash
-cd autodock-aurora-2-benchmarks-ia3-2021
+cd reproduce-ia3-2021-moldocking-vector
 ./prepare_inputs.sh
 ./evaluate_autodock_gpu.sh
 ```
