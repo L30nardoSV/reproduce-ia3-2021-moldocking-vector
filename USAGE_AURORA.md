@@ -15,7 +15,7 @@ The compilation command below is a general one, so make sure to e.g., enable mul
 
 ```bash
 mkdir bin && make CONFIG=RELEASE OMP=YES
-cp bin/Autodock-Aurora reproduce-ia3-2021-moldocking-vector/
+cp bin/autodock-aurora reproduce-ia3-2021-moldocking-vector/
 mkdir reproduce-ia3-2021-moldocking-vector/bin && cp bin/libkernel_ga.so reproduce-ia3-2021-moldocking-vector/bin
 ```
 
