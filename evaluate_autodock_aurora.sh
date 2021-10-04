@@ -8,7 +8,7 @@ source list_inputs.sh
 source evaluate.sh
 
 RES_AURORA_DIR=results_aurora
-AURORA_VH_BIN=./autodock-aurora-2
+AURORA_VH_BIN=./autodock-aurora
 AURORA_VE_BIN=./bin/libkernel_ga.so
 
 # Bash functions
