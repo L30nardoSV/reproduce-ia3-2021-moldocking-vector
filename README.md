@@ -1,7 +1,7 @@
 # Reproducing IA^3 2021 Paper: Mapping Irregular Computations for Molecular Docking to the SX-Aurora TSUBASA Vector Engine
 
 This repository contains the scripts and configuration files used in the 
-Artifact Appendix of the aforementioned article submitted to IA^3 2021 **(currently under revision)**.
+Artifact Appendix of the article submitted to [IA^3 2021](https://hpc.pnl.gov/IA3) **(currently in press)**.
 
 These scripts automate the evaluation of two molecular docking programs on different platforms:
 * [AutoDock-Aurora](https://github.com/esa-tu-darmstadt/AutoDock-Aurora) **(developed in this work)** on the SX-Aurora TSUBASA Vector Engine
