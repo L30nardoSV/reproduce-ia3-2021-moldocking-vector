@@ -22,3 +22,7 @@ This step automates the collecting of runtimes used in the article's discussion:
 
 * [Collecting results](./USAGE_COLLECT-RESULT-SCRIPT.md)
 
+## Further information
+
+Additional material include the [paper preprint](https://www.esa.informatik.tu-darmstadt.de/assets/publications/materials/2021/IA3_2021_LVS_merged_09102021.pdf) and [presentation slides](https://www.esa.informatik.tu-darmstadt.de/assets/publications/materials/2021/IA3_2021_LVS_slides_15-11-2021.pdf).
+
