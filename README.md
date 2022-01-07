@@ -1,7 +1,7 @@
 # Reproducing IA^3 2021 paper: _Mapping Irregular Computations for Molecular Docking to the SX-Aurora TSUBASA Vector Engine_
 
 This repository contains the scripts and configuration files used in the 
-Artifact Appendix of the article accepted at the [11th Workshop on Irregular Applications: Architectures and Algorithms (IA^3), 2021](https://hpc.pnl.gov/IA3):
+_Artifact Appendix_ of the article accepted at the [11th Workshop on Irregular Applications: Architectures and Algorithms (IA^3), 2021](https://hpc.pnl.gov/IA3):
 
 The paper has been published on IEEExplore:: https://doi.org/10.1109/IA354616.2021.00008.
 
